@@ -1,0 +1,14 @@
+version: '3'
+services:
+  go-api:
+    build: .
+    ports:
+      - "8080:8080"
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: chatdb
+    ports:
+      - "5432:5432"
